@@ -24,7 +24,7 @@ $message  = $_POST['message'];
 // - Validate each of the fields to make sure they are filled in with correct and valid input using PHP.
 // - The input that is already filled should remain when you display an error for any other field.
 
-
+// Need to create some funtion to validate but right now not getting the idea 
 
 
 
@@ -61,7 +61,7 @@ if(empty($name) || empty($phone)|| empty($email)||empty($subject)||empty($messag
   $sql = "INSERT INTO contact_form (name , phone , email , subject , message , timestamp , ip ) VALUES (? , ?,?,?,?,?,?)";
 
   $stmt = $db->prepare($sql);
-  db2_bind_param(stmt, "sssssss", $name ,$phone,$email,$subject,$message,$ip , $timestamp );
+  db2_bind_param(stmt, 7, $name ,$phone,$email,$subject,$message,$ip , $timestamp );
 
 
 // Send an email notification to the site owner containing the form submission details.
